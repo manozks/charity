@@ -1,0 +1,734 @@
+<!doctype html>
+<html class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Charity</title>
+  <!-- Favicon Links -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="aos.css" rel="stylesheet">
+  <link href="output.css" rel="stylesheet">
+
+  <style>
+    /* Initial state before animation */
+    .opacity-0 {
+      opacity: 0;
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-left {
+      transform: translateX(-50px);
+      /* Move left */
+    }
+
+    .fade-right {
+      transform: translateX(50px);
+      /* Move right */
+    }
+
+    /* Animation class to reveal the element */
+    .animated {
+      opacity: 1;
+      transform: translateX(0);
+      /* Reset to normal position */
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+
+
+  <!-- Loading Spinner -->
+  <!--   <div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
+    <div class="loader border-t-4 border-black rounded-full w-16 h-16 animate-spin "></div>
+</div> -->
+
+  <!-- Scroll to Top Icon -->
+  <a href="#" id="scrollToTop" class="scroll-to-top">
+    <i class="fa fa-arrow-up"></i>
+  </a>
+
+
+  <!-- header section  -->
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-4 lg:px-14 fixed w-full bg-white shadow-sm">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <i class="fa-sharp fa-solid fa-handshake-angle text-2xl"></i>
+          <span class="text-2xl font-bold">Charity</span>
+        </a>
+      </div>
+
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="index.html" class="text-[16px] font-semibold leading-6 text-black">Home</a>
+        <a href="#about" class="text-[16px] font-semibold leading-6 text-black">About</a>
+        <a href="#services" class="text-[16px] font-semibold leading-6 text-black">Services</a>
+        <a href="#causes" class="text-[16px] font-semibold leading-6 text-black">Causes</a>
+        <a href="#contact" class="text-[16px] font-semibold leading-6 text-black">Contact</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#contact"
+          class=" rounded-full bg-secondary text-sm font-semibold leading-6 text-white px-5 py-2 shadow-md hover:bg-transparent hover:text-black transition duration-300">Donate
+          Now </a>
+      </div>
+      <div class="handlemenu lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div id="nav-dialog" class="hidden">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <i class="fa-sharp fa-solid fa-handshake-angle text-2xl"></i>
+              <span class="text-2xl font-bold">Charity</span>
+            </a>
+            <button type="button" class="handleclose -m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="index.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:scale-105">Home</a>
+                <a href="#about"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
+                <a href="#services"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
+                <a href="#causes"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Causes</a>
+
+                <a href="#contact"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+              </div>
+              <div class="py-6 transition-all hover:scale-105">
+                <a href="#donate"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Donate
+                  Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <!-- hero section  -->
+  <div class="bg-primary">
+    <div class="relative isolate px-6 pt-14 lg:px-8">
+      <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        aria-hidden="true">
+        <div
+          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#000] to-[#7D9D00] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+      <div class="mx-auto max-w-2xl py-20 sm:py-40 lg:py-50">
+
+        <div class="text-center" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl fade-in-section animate-fadeInUp">
+            Donate 4 a better world</h1>
+          <p class="mt-6 text-lg leading-8 text-gray-600 fade-in-section animate-fadeInUp">Your contribution can make a
+            significant impact. Donate today
+            to help build a better world for everyone. Every little bit counts, and together, we can create positive
+            change</p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="#contact" class="black-btn fade-in-section opacity-0">Donation</a>
+            <a href="#" class="learn-btn fade-in-section opacity-0">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        aria-hidden="true">
+        <div
+          class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#000] to-[#FFFFFF] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main section  -->
+  <main>
+    <!-- Grid Box Services section  -->
+    <div id="services" class="min-h-[300px] bg-gradient-to-b from-normal to-[#ffffff]">
+      <div class="container overflow-x-hidden overflow-y-hidden">
+        <div class="flex">
+          <h2 class="text-3xl font-semibold leading-snug lg:text-4xl" data-aos="fade-right" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">The Charity <br> Provide
+            Services.</h2>
+          <div class="flex flex-1 justify-end items-center" data-aos="fade-left" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            <a href="#" class="flex items-center gap-2">
+              <span class="text-lg font-medium underline">See all</span>
+              <div
+                class="flex bg-black w-10 h-10 rounded-full justify-center items-center rotate-45 text-white hover:bg-primary hover:text-black transition duration-300">
+                <i class="fa fa-arrow-up"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+          <div class="services-block group" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <figure>
+              <img src="./assets/hands-yellow.png" loading="lazy" class="group-hover:hidden" alt="icon">
+              <img src="./assets/hands-black.png" loading="lazy" class="hidden group-hover:block" alt="icon">
+            </figure>
+            <h3 class="text-2xl pt-6 font-semibold leading-snug">Become a Volunteer</h3>
+            <p class="text-lg">Becoming a volunteer is a rewarding way to give back to your community and make a
+              positive impact on the lives of others.</p>
+          </div>
+          <div class="services-block group" data-aos="fade-down" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <figure>
+              <img src="./assets/donation-yellow.png" loading="lazy" class="group-hover:hidden" alt="icon">
+              <img src="./assets/donation-black.png" loading="lazy" class="hidden group-hover:block" alt="icon">
+            </figure>
+            <h3 class="text-2xl pt-6 font-semibold leading-snug">Dance & Music</h3>
+            <p class="text-lg">Dance, a rhythmic movement of the body, often performed to music, allows individuals to
+              convey emotions, tell stories, and celebrate life. </p>
+          </div>
+          <div class="services-block group" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <figure>
+              <img src="./assets/charity-yellow.png" loading="lazy" class="group-hover:hidden" alt="icon">
+              <img src="./assets/charity-black.png" loading="lazy" class="hidden group-hover:block" alt="icon">
+            </figure>
+            <h3 class="text-2xl pt-6 font-semibold leading-snug">Online Conference</h3>
+            <p class="text-lg">An online conference is a virtual event where participants gather via the internet to
+              engage in discussions, presentations, and networking activities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section  -->
+    <div id="about" class="bg-white">
+      <div class="container flex flex-col gap-10 lg:flex-row overflow-x-hidden">
+
+        <div id="left-col" class="flex flex-col w-full lg:w-1/2" data-aos="fade-right" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <span class="text-xl text-[#a6c380] font-medium mb-3">About us</span>
+          <h2 class="text-3xl font-semibold leading-snug lg:text-4xl">15k+ Charity using <br>Helping Hands.</h2>
+          <p class="text-lg">Charity is the act of giving help, often in the form of money, goods, or time, to those in
+            need. It reflects a spirit of kindness and generosity, aimed at improving the lives of others and supporting
+            causes that make a positive impact on society.</p>
+          <div class="mt-10 flex items-left gap-x-6">
+            <a href="#" class="black-btn">Learn more
+            </a>
+            <a href="#contact" class="learn-btn">Request a Callback
+            </a>
+
+          </div>
+        </div>
+        <div id="right-col" class="flex flex-col w-full lg:w-1/2 items-center lg:items-end" data-aos="fade-left"
+          data-aos-offset="300" data-aos-easing="ease-in-sine">
+          <div class="relative">
+            <div class="absolute top-5 right-3 flex flex-col">
+              <div class="fund-btn transition-all hover:scale-105"><i
+                  class="fa-solid fa-hand-holding-dollar pr-3"></i>Fundraiser for Kids</div>
+              <div class="fund-btn transition-all hover:scale-105"><i class="fa-solid fa-water pr-3"></i>Bring water to
+                the childrens</div>
+            </div>
+            <img src="./assets/welcome.jpg" loading="lazy" alt="picture" class="rounded-3xl">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Feature Section  -->
+    <div id="upcoming-feature" class="min-h-[300px] bg-gradient-to-b from-[#ffffff] to-normal">
+      <div class="container grid lg:grid-cols-5 gap-4 overflow-x-hidden">
+        <div class="lg:col-span-2 flex items-center">
+          <h2 class="text-3xl font-semibold leading-snug lg:text-5xl" data-aos="fade-right" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">The Charity <br>Upcoming
+            Events.</h2>
+        </div>
+        <div class="rounded-3xl lg:col-span-3 relative" data-aos="fade-left" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <img alt="picture" src="./assets/hero.jpg" loading="lazy" class="object-cover w-full h-full rounded-3xl">
+          <div class="absolute left-0 top-0 p-10 bg-black  w-[240px] h-full rounded-l-3xl">
+            <h4 class="text-xl font-bold text-white">The Charity Services</h4>
+            <p class="text-md font-light  text-white ">The Arctic Ocean freezes every winter and much .
+            </p>
+            <div class="absolute left-48 top-0 inset-0 h-full w-[60px] bg-black transform skew-x-6 origin-top-left">
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="rounded-3xl lg:col-span-3 relative" data-aos="fade-right" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <img alt="picture" src="./assets/11.jpg" loading="lazy" class="object-cover w-full h-full rounded-3xl">
+          <div class="absolute left-0 top-0 p-10 bg-white  w-[240px] h-full rounded-l-3xl">
+            <h4 class="text-xl font-bold text-black">Bring water to the childrens</h4>
+            <p class="text-md font-light  text-black">The Arctic Ocean freezes every winter and much .
+            </p>
+            <div class="absolute left-48 top-0 inset-0 h-full w-[60px] bg-white transform skew-x-6 origin-top-left">
+            </div>
+
+          </div>
+
+        </div>
+        <div class="relative rounded-3xl bg-white" data-aos="fade-right" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <img alt="picture" src="./assets/cause-3.jpg" loading="lazy" class="w-full align-middle rounded-t-3xl">
+          <blockquote class="relative p-5 mb-4">
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+              class="absolute left-0 w-full block" style="height:95px;top:-94px">
+              <polygon points="-30,95 583,95 583,65" class="text-white fill-current"></polygon>
+            </svg>
+            <h4 class="text-xl font-bold text-black">Fundraiser for Kids</h4>
+            <p class="text-md font-light text-black">The Arctic Ocean freezes every winter and much .
+            </p>
+
+          </blockquote>
+        </div>
+
+
+        <div class="relative rounded-3xl bg-primary" data-aos="fade-left" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <img alt="picture" loading="lazy" src="./assets/cause-4.jpg" class="w-full rounded-t-3xl">
+          <blockquote class="relative p-5 mb-4">
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+              class="absolute left-0 w-full block" style="height:95px;top:-94px">
+              <polygon points="-30,95 583,95 583,65" class="text-primary fill-current"></polygon>
+            </svg>
+            <h4 class="text-xl font-bold text-black">Helping Hands</h4>
+            <p class="text-md font-light  text-black">The Arctic Ocean freezes every winter and much of the.
+            </p>
+
+          </blockquote>
+        </div>
+
+
+
+        <!--  <div class="lg:col-span-2">
+            <div class="relative rounded-3xl">
+              <img alt="picture" src="./assets/cause-4.jpg" class="w-full h-full rounded-3xl">
+              <div class="absolute right-0 top-0 p-10 bg-white  w-[200px] h-full rounded-r-3xl">       
+                <h4 class="text-xl font-bold text-black">Top Notch Services</h4>
+                    <p class="text-md font-light mt-2 text-black">The Arctic Ocean freezes every winter and much .
+                       </p>
+                <div class="absolute -left-4 top-0 inset-0 h-full w-[34px] bg-white transform -skew-x-6 top-left"></div>
+                
+              </div>
+                  </div>-->
+      </div>
+    </div>
+    <!-- Featured Cause section  -->
+    <div id="causes" class="bg-gradient-to-t to-normal from-white">
+      <div class="container overflow-x-hidden overflow-y-hidden">
+        <div class="flex">
+          <h2 class="text-3xl font-semibold leading-snug lg:text-4xl" data-aos="fade-left" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">The Charity <br>
+            Featured Cause</h2>
+          <div class="flex flex-1 justify-end items-center" data-aos="fade-left" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            <a href="#" class="flex items-center gap-2">
+              <span class="text-lg font-medium underline">See all</span>
+              <div
+                class="flex bg-black w-10 h-10 rounded-full justify-center items-center rotate-45 text-white hover:bg-primary hover:text-black transition duration-300">
+                <i class="fa fa-arrow-up"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-6 relative z-20">
+
+          <article data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine"
+            class="overflow-hidden rounded-3xl shadow transition hover:shadow-lg">
+            <img alt="" src="./assets/cause-bg.jpg" class="h-72  w-full object-cover" />
+
+            <div class="bg-white p-4 sm:p-6">
+              <time datetime="2022-10-10" class="block text-xs text-gray-500"> 10th Sep 2024 </time>
+
+              <a href="#">
+                <h3 class="mt-0.5 text-lg font-semibold text-gray-900">Fundraiser for Kids</h3>
+              </a>
+
+              <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
+                pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem,
+                mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
+                dignissimos. Molestias explicabo corporis voluptatem?
+              </p>
+              <div class="flex justify-end items-center mt-5">
+                <a href="#" class="flex items-center gap-2">
+                  <span class="text-lg font-medium underline"> Find out more</span>
+                  <div
+                    class="flex bg-black w-10 h-10 rounded-full justify-center items-center rotate-45 text-white hover:bg-primary hover:text-black transition duration-300">
+                    <i class="fa fa-arrow-up"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article data-aos="fade-down" data-aos-offset="300" data-aos-easing="ease-in-sine"
+            class="overflow-hidden rounded-3xl shadow transition hover:shadow-lg">
+            <img alt="" src="./assets/welcome-bg.jpg" class="h-72  w-full object-cover" />
+
+            <div class="bg-white p-4 sm:p-6">
+              <time datetime="2022-10-10" class="block text-xs text-gray-500"> 12th Sep 2024 </time>
+
+              <a href="#">
+                <h3 class="mt-0.5 text-lg text-gray-900">Bring water to the childrens</h3>
+              </a>
+
+              <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
+                pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem,
+                mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
+                dignissimos. Molestias explicabo corporis voluptatem?
+              </p>
+              <div class="flex justify-end items-center mt-5">
+                <a href="#" class="flex items-center gap-2">
+                  <span class="text-lg font-medium underline"> Find out more</span>
+                  <div
+                    class="flex bg-black w-10 h-10 rounded-full justify-center items-center rotate-45 text-white hover:bg-primary hover:text-black transition duration-300">
+                    <i class="fa fa-arrow-up"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </article>
+
+
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Helped section  -->
+    <div id="helped" class="bg-primary">
+      <div class="relative isolate pt-10 pb-20">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true">
+          <div
+            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#000] to-[#7D9D00] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+          </div>
+        </div>
+        <div class="container grid lg:grid-cols-6 gap-4 overflow-x-hidden">
+          <div class="lg:col-span-3">
+            <h2 class="text-3xl font-semibold leading-snug" data-aos="fade-right" data-aos-offset="300"
+              data-aos-easing="ease-in-sine">We love to help all the children that have problems in the world. After 15
+              years we have many goals achieved.</h2>
+          </div>
+          <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-left" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            <div><img src="./assets/teamwork.png" alt="Teamwork" loading="lazy"></div>
+            <div class="text-3xl font-semibold text-black">120 <span class="text-xl font-normal">k</span></div>
+            <div class="text-sm text-black">Children helped</div>
+          </div>
+          <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-right" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            <div><img src="./assets/donation.png" alt="Teamwork" loading="lazy"></div>
+            <div class="text-3xl font-semibold text-black">79</div>
+            <div class="text-sm text-black">Water wells</div>
+          </div>
+          <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-left" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            <div><img src="./assets/dove.png" alt="Teamwork" loading="lazy"></div>
+            <div class="text-3xl font-semibold text-black">253</div>
+            <div class="text-sm text-black">Volunteeres</div>
+          </div>
+
+        </div>
+        <div
+          class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          aria-hidden="true">
+          <div
+            class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#000] to-[#FFFFFF] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Contact section  -->
+    <div id="contact" class="bg-gradient-to-t from-normal to-[#ffffff]">
+      <div class="container grid lg:grid-cols-3 gap-5">
+        <div class="flex flex-col gap-3 items-center" data-aos="fade-right" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <div class="bg-primary w-20 h-20 rounded-full flex justify-center items-center "><i
+              class="fa-solid fa-location-dot text-4xl"></i></div>
+          <h4 class="text-3xl font-semibold pb-0">Our Address</h4>
+          <p>Sanepa
+            Kathmandu, Nepal </p>
+        </div>
+        <div class="flex flex-col gap-3 items-center" data-aos="fade-left" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <div class="bg-primary w-20 h-20 rounded-full flex justify-center items-center "><i
+              class="fa-solid fa-phone text-4xl"></i></div>
+          <h4 class="text-3xl font-semibold pb-0">Contact Info</h4>
+          <p>Open a chat or give us call at </p>
+          <p>+977-9851195907</p>
+        </div>
+        <div class="flex flex-col gap-3 items-center" data-aos="fade-right" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <div class="bg-primary w-20 h-20 rounded-full flex justify-center items-center "><i
+              class="fa-solid fa-headset text-4xl"></i></div>
+          <h4 class="text-3xl font-semibold pb-0">Live Support</h4>
+          <p>Telegram: @manozks</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5 rounded-3xl bg-white p-8 shadow lg:p-12 overflow-x-hidden">
+          <div class="lg:col-span-2 lg:py-12" data-aos="fade-right" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+            <h4 class="max-w-xl text-5xl">
+              Have inquiries? Reach out via message
+            </h4>
+
+            <div class="mt-8">
+              <div class="text-center"><i class="fa-solid fa-comments text-8xl"></i></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-3" data-aos="fade-left" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+            <form action="#" class="space-y-4">
+              <div>
+                <label class="text-sm" for="name">Name</label>
+                <input class="w-full rounded-lg border bg-[#f1f2f2] p-3 text-sm" placeholder="Name" type="text"
+                  id="name" />
+              </div>
+
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label class="text-sm" for="email">Email</label>
+                  <input class="w-full rounded-lg border bg-[#f1f2f2] p-3 text-sm" placeholder="Email address"
+                    type="email" id="email" />
+                </div>
+
+                <div>
+                  <label class="text-sm" for="phone">Phone</label>
+                  <input class="w-full rounded-lg border bg-[#f1f2f2] p-3 text-sm" placeholder="Phone Number" type="tel"
+                    id="phone" />
+                </div>
+              </div>
+
+
+
+              <div>
+                <label class="text-sm" for="message">Message</label>
+
+                <textarea class="w-full rounded-lg border bg-[#f1f2f2] p-3 text-sm" placeholder="Message" rows="8"
+                  id="message"></textarea>
+              </div>
+
+              <div class="mt-4">
+                <button type="submit"
+                  class="inline-block w-full rounded-3xl bg-black px-5 py-3 font-medium text-white sm:w-auto">
+                  Send Enquiry
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </main>
+
+  <!-- footer section  -->
+  <footer class="bg-normal">
+
+    <div class="container overflow-x-hidden">
+      <div
+        class="flex relative flex-col items-center gap-4 rounded-lg bg-white p-6 shadow-lg sm:flex-row sm:justify-between"
+        data-aos="fade-down" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <strong class="text-xl text-white sm:text-xl z-10"> Fundraiser for Kids! </strong>
+
+        <a class="inline-flex items-center gap-2 rounded-full border border-black bg-primary px-8 py-3 text-black hover:bg-white hover:text-black focus:outline-none focus:ring z-10 hover:z-10"
+          href="#contact">
+          <span class="text-lg font-semibold"> Donate Now </span>
+
+          <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <div
+          class="absolute -left-4 top-0 inset-0 h-full w-[390px] bg-black rounded-l-2xl transform skew-x-6 origin-top-left">
+        </div>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="flex justify-center  col-span-2" data-aos="fade-right" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
+          <div
+            class="rounded-full bg-primary w-[350px] h-[350px] px-[30px] py-[15px] flex flex-col gap-6 justify-center items-center"
+            data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <div class=""><a href="#" class="-m-1.5 p-1.5">
+                <i class="fa-sharp fa-solid fa-handshake-angle text-2xl"></i>
+                <span class="text-2xl font-bold">Charity</span>
+              </a></div>
+            <p class="text-center">The Arctic Ocean freezes every winter and much .</p>
+            <p class="text-center  text-2xl font-semibold">00977-9851195907</p>
+          </div>
+        </div>
+        <div class="text-center sm:text-left" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
+          <p class="text-lg font-medium text-gray-900">About Us</p>
+
+          <ul class="mt-8 space-y-4 text-sm">
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#">
+                Company History
+              </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#"> Meet the Team </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#">
+                Employee Handbook
+              </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#"> Careers </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-center sm:text-left" data-aos="fade-down" data-aos-offset="300" data-aos-easing="ease-in-sine">
+          <p class="text-lg font-medium text-gray-900">Our Services</p>
+
+          <ul class="mt-8 space-y-4 text-sm">
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#">
+                Web Development
+              </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#"> Web Design </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#"> Marketing </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#"> Google Ads </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-center sm:text-left" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
+          <p class="text-lg font-medium text-gray-900">Helpful Links</p>
+
+          <ul class="mt-8 space-y-4 text-sm" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#contact">
+                Contact
+              </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 transition hover:text-gray-700/75" href="#">FAQs</a>
+            </li>
+
+          </ul>
+        </div>
+
+
+      </div>
+      <div class="grid justify-center lg:grid-cols-3 gap-6 mt-6 border-t border-[#ccc] pt-5">
+        <div class="flex justify-center lg:justify-start">
+          <p class="mt-4 text-center text-sm text-gray-500 sm:mt-0">
+            Copyright &copy; 2024. All rights reserved.
+          </p>
+
+        </div>
+        <div class="flex justify-center gap-6 text-black">
+          <a href="#" class="">Privacy & Terms</a>
+          <a href="#" class="">Contact Us</a>
+        </div>
+        <div class="flex justify-center lg:justify-end">
+          <ul class="flex gap-6">
+            <li>
+              <a href="https://www.linkedin.com/in/manoj-sah-41961453/" rel="noreferrer" target="_blank"
+                class="text-gray-500 transition hover:text-black">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+
+
+
+
+
+            <li>
+              <a href="https://github.com/manozks" rel="noreferrer" target="_blank"
+                class="text-gray-500 transition hover:text-black">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+<script src="aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="script.js"></script>
+
+
+</html>
