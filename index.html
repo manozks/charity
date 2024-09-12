@@ -6,52 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Charity</title>
     <!-- Favicon Links -->
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="aos.css" rel="stylesheet">
     <link href="output.css" rel="stylesheet">
 
-    <style>
-        /* Initial state before animation */
-        .opacity-0 {
-            opacity: 0;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-left {
-            transform: translateX(-50px);
-            /* Move left */
-        }
-
-        .fade-right {
-            transform: translateX(50px);
-            /* Move right */
-        }
-
-        /* Animation class to reveal the element */
-        .animated {
-            opacity: 1;
-            transform: translateX(0);
-            /* Reset to normal position */
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fadeInUp {
-            animation: fadeInUp 1s ease-out forwards;
-        }
-    </style>
+   
 
 
 </head>
@@ -547,7 +508,7 @@
                 <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5 rounded-3xl bg-white p-8 shadow lg:p-12 overflow-x-hidden">
                     <div class="lg:col-span-2 lg:py-12" data-aos="fade-right" data-aos-offset="300"
                          data-aos-easing="ease-in-sine">
-                        <h4 class="max-w-xl text-5xl">
+                        <h4 class="max-w-xl text-4xl">
                             Have inquiries? Reach out via message
                         </h4>
 
@@ -717,7 +678,7 @@
                 </div>
                 <div class="flex justify-center gap-6 text-black">
                     <a href="#" class="">Privacy & Terms</a>
-                    <a href="#" class="">Contact Us</a>
+                    <a href="#" id="contact" class="">Contact Us</a>
                 </div>
                 <div class="flex justify-center lg:justify-end">
                     <ul class="flex gap-6">
