@@ -38,7 +38,7 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 $mail = mail($to,$subject,$message,$headers);
 if($mail){
-    echo '<script>alert("Thank you for reaching to us! we\'ll get back to you at the earliest."); window.location.replace("https://manozks.github.io/charity/")</script>';
+    echo '<script>alert("Thank you for reaching to us! we\'ll get back to you at the earliest."); window.location.replace("https://nepaimpressions.com/manoj/charity/")</script>';
 }else{
     echo "ACCESS DENIED";
 }
