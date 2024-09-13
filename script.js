@@ -2,8 +2,13 @@ $(document).ready(function () {
 
     // Open Nav Menu
     $('.handlemenu').click(function (){
-        $('#nav-dialog').removeClass('hidden');
+        $('#nav-dialog').removeClass('hidden');        
     });
+    $('.menu-mobile').click(function () {
+        $('#nav-dialog').addClass('hidden');
+
+    });
+   
 
      // Close Nav Menu
      $('.handleclose').click(function (){
