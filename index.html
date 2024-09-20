@@ -27,88 +27,95 @@
     </a>
 
 
-    <!-- header section  -->
-    <header class="absolute inset-x-0 top-0 z-50">
-        <nav class="flex items-center justify-between p-4 lg:px-14 fixed w-full bg-white shadow-sm">
-            <div class="flex lg:flex-1">
-                <a href="#" class="-m-1.5 p-1.5">
-                    <i class="fa-sharp fa-solid fa-handshake-angle text-2xl"></i>
-                    <span class="text-2xl font-bold">Charity</span>
-                </a>
-            </div>
+   
+   
+  
+    <!-- hero section  -->
+    <div class="bg-[url('assets/welcome-bg.jpg')]  h-full w-full bg-cover object-cover bg-center bg-no-repeat overflow-x-clip">
 
-            <div class="hidden lg:flex lg:gap-x-12">
-                <a href="index.html" class="text-[16px] font-semibold leading-6 text-black  transition-all hover:scale-105">Home</a>
-                <a href="#about" class="text-[16px] font-semibold leading-6 text-black transition-all hover:scale-105">About</a>
-                <a href="#services" class="text-[16px] font-semibold leading-6 text-black transition-all hover:scale-105">Services</a>
-                <a href="#causes" class="text-[16px] font-semibold leading-6 text-black transition-all hover:scale-105">Causes</a>
-                <a href="#contact" class="text-[16px] font-semibold leading-6 text-black transition-all hover:scale-105">Contact</a>
-            </div>
-            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <a href="#contact"
-                   class=" rounded-full bg-secondary text-sm font-semibold leading-6 text-white px-5 py-2 shadow-md hover:bg-transparent hover:text-black transition duration-300 hover:scale-105">
-                    Donate
-                    Now
-                </a>
-            </div>
-            <div class="handlemenu lg:hidden">
-                <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                         aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
-            </div>
-            <!-- Mobile menu, show/hide based on menu open state. -->
-            <div  id="nav-dialog" class="hidden">
-                <!-- Background backdrop, show/hide based on slide-over state. -->
-                <div class="fixed inset-0 z-50"></div>
-                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                    <div class="flex items-center justify-between">
+        <!-- header section  -->
+        <div class="relative">
+            <header class="absolute inset-x-0 top-2 left-[1%] right-[1%] z-50">
+                <nav class="flex items-center justify-between p-4 lg:px-14 fixed w-[98%] bg-primary rounded-xl shadow-lg">
+                    <div class="flex lg:flex-1">
                         <a href="#" class="-m-1.5 p-1.5">
                             <i class="fa-sharp fa-solid fa-handshake-angle text-2xl"></i>
                             <span class="text-2xl font-bold">Charity</span>
                         </a>
-                        <button type="button" class="handleclose -m-2.5 rounded-md p-2.5 text-gray-700">
-                            <span class="sr-only">Close menu</span>
+                    </div>
+
+                    <div class="hidden lg:flex lg:gap-x-12">
+                        <a href="index.html" class="text-[16px] font-semibold leading-6 text-black  transition-all hover:scale-105">Home</a>
+                        <a href="#about" class="text-[16px] font-semibold leading-6 text-black transition-all hover:scale-105">About</a>
+                        <a href="#services" class="text-[16px] font-semibold leading-6 text-black transition-all hover:scale-105">Services</a>
+                        <a href="#causes" class="text-[16px] font-semibold leading-6 text-black transition-all hover:scale-105">Causes</a>
+                        <a href="#contact" class="text-[16px] font-semibold leading-6 text-black transition-all hover:scale-105">Contact</a>
+                    </div>
+                    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                        <a href="#contact"
+                           class=" rounded-full bg-secondary text-sm font-semibold leading-6 text-white px-5 py-2 shadow-md hover:bg-white hover:text-black transition duration-300 hover:scale-105">
+                            Donate
+                            Now
+                        </a>
+                    </div>
+                    <div class="handlemenu lg:hidden">
+                        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                            <span class="sr-only">Open main menu</span>
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                  aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
                         </button>
                     </div>
-                    <div class="mt-6 flow-root">
-                        <div class="-my-6 divide-y divide-gray-500/10">
-                            <div class="space-y-2 py-6">
-                                <a href="index.html"
-                                   class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
-                                <a href="#about"
-                                   class="menu-mobile -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
-                                <a href="#services"
-                                   class="menu-mobile -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
-                                <a href="#causes"
-                                   class="menu-mobile -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Causes</a>
-
-                                <a href="#contact"
-                                   class="menu-mobile -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
-                            </div>
-                            <div class="py-6">
-                                <a href="#contact"
-                                   class="menu-mobile -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                    Donate
-                                    Now
+                    <!-- Mobile menu, show/hide based on menu open state. -->
+                    <div id="nav-dialog" class="hidden">
+                        <!-- Background backdrop, show/hide based on slide-over state. -->
+                        <div class="fixed inset-0 z-50"></div>
+                        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                            <div class="flex items-center justify-between">
+                                <a href="#" class="-m-1.5 p-1.5">
+                                    <i class="fa-sharp fa-solid fa-handshake-angle text-2xl"></i>
+                                    <span class="text-2xl font-bold">Charity</span>
                                 </a>
+                                <button type="button" class="handleclose -m-2.5 rounded-md p-2.5 text-gray-700">
+                                    <span class="sr-only">Close menu</span>
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                         aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flow-root">
+                                <div class="-my-6 divide-y divide-gray-500/10">
+                                    <div class="space-y-2 py-6">
+                                        <a href="index.html"
+                                           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                                        <a href="#about"
+                                           class="menu-mobile -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
+                                        <a href="#services"
+                                           class="menu-mobile -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
+                                        <a href="#causes"
+                                           class="menu-mobile -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Causes</a>
+
+                                        <a href="#contact"
+                                           class="menu-mobile -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+                                    </div>
+                                    <div class="py-6">
+                                        <a href="#contact"
+                                           class="menu-mobile -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                            Donate
+                                            Now
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </nav>
+                </nav>
 
-    </header>
-    <!-- hero section  -->
-    <div class="bg-primary">
+            </header>
+        </div>
+
         <div class="relative isolate px-6 pt-14 lg:px-8">
             <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                  aria-hidden="true">
@@ -116,13 +123,14 @@
                      style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
                 </div>
             </div>
+            <svg class="absolute bottom-0 w-screen translate-y-px rotate-180 text-white left-0" viewBox="0 0 1440 332" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V694H0V0Z M1440 332V303.318C1470.64 257.501 1482.79 212.376 1472.71 170.529C1431.99 1.43486 1043.73 -50.094 605.509 55.4363C167.286 160.967 -154.953 383.594 -114.233 552.688C-102.526 601.304 -62.0902 640.202 0.00106654 668.443V694L72.3368 694C209.249 731.174 407.975 732.982 627.651 694L1440 694L1440 332H1440Z" fill="#ebf3ee"></path></svg>
             <div class="mx-auto max-w-2xl py-20 sm:py-40 lg:py-50">
 
                 <div class="text-center" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl fade-in-section animate-fadeInUp">
+                    <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl fade-in-section animate-fadeInUp">
                         Donate 4 a better world
                     </h1>
-                    <p class="mt-6 text-lg leading-8 text-gray-600 fade-in-section animate-fadeInUp">
+                    <p class="mt-6 text-lg leading-8 text-white fade-in-section animate-fadeInUp">
                         Your contribution can make a
                         significant impact. Donate today
                         to help build a better world for everyone. Every little bit counts, and together, we can create positive
@@ -134,13 +142,9 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-                 aria-hidden="true">
-                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#000] to-[#FFFFFF] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-                     style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-                </div>
-            </div>
+         
         </div>
+
     </div>
 
     <!-- main section  -->
@@ -421,51 +425,46 @@
         </div>
 
         <!-- Helped section  -->
-        <div id="helped" class="bg-primary">
-            <div class="relative isolate pt-10 pb-20">
-                <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-                     aria-hidden="true">
-                    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#000] to-[#7D9D00] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-                         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-                    </div>
-                </div>
-                <div class="container grid lg:grid-cols-6 gap-4 overflow-x-hidden">
-                    <div class="lg:col-span-3">
-                        <h2 class="text-3xl font-semibold leading-snug" data-aos="fade-right" data-aos-offset="300"
-                            data-aos-easing="ease-in-sine">
-                            We love to help all the children that have problems in the world. After 15
-                            years we have many goals achieved.
-                        </h2>
-                    </div>
-                    <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-left" data-aos-offset="300"
-                         data-aos-easing="ease-in-sine">
-                        <div><img src="./assets/teamwork.png" alt="Teamwork" loading="lazy"></div>
-                        <div class="text-3xl font-semibold text-black">120 <span class="text-xl font-normal">k</span></div>
-                        <div class="text-sm text-black">Children helped</div>
-                    </div>
-                    <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-right" data-aos-offset="300"
-                         data-aos-easing="ease-in-sine">
-                        <div><img src="./assets/donation.png" alt="Teamwork" loading="lazy"></div>
-                        <div class="text-3xl font-semibold text-black">79</div>
-                        <div class="text-sm text-black">Water wells</div>
-                    </div>
-                    <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-left" data-aos-offset="300"
-                         data-aos-easing="ease-in-sine">
-                        <div><img src="./assets/dove.png" alt="Teamwork" loading="lazy"></div>
-                        <div class="text-3xl font-semibold text-black">253</div>
-                        <div class="text-sm text-black">Volunteeres</div>
-                    </div>
+         <div id="helped" class="bg-[url('assets/pic1.jpg')] h-full w-full bg-cover bg-center bg-no-repeat overflow-x-clip">
+      <div class="relative isolate pt-20 pb-20">
+        <svg class="absolute top-0 w-screen transform scale-y-[-1] rotate-180 text-white md:-left-40 md:w-[140vw]" viewBox="0 0 1440 332" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V694H0V0Z M1440 332V303.318C1470.64 257.501 1482.79 212.376 1472.71 170.529C1431.99 1.43486 1043.73 -50.094 605.509 55.4363C167.286 160.967 -154.953 383.594 -114.233 552.688C-102.526 601.304 -62.0902 640.202 0.00106654 668.443V694L72.3368 694C209.249 731.174 407.975 732.982 627.651 694L1440 694L1440 332H1440Z" fill="currentColor"></path></svg>
+        <div class="container grid lg:grid-cols-6 gap-4 overflow-x-hidden">
+          <div class="lg:col-span-3">
+            <h2 class="text-3xl text-white  font-semibold leading-snug" data-aos="fade-right" data-aos-offset="300"
+              data-aos-easing="ease-in-sine">We love to help all the children that have problems in the world. After 15
+              years we have many goals achieved.</h2>
+          </div>
+          <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-left" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            <div><img src="./assets/teamwork.png" alt="Teamwork" loading="lazy"></div>
+            <div class="text-3xl font-semibold text-white">120 <span class="text-xl font-normal">k</span></div>
+            <div class="text-sm text-white">Children helped</div>
+          </div>
+          <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-right" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            <div><img src="./assets/donation.png" alt="Teamwork" loading="lazy"></div>
+            <div class="text-3xl font-semibold text-white">79</div>
+            <div class="text-sm text-white">Water wells</div>
+          </div>
+          <div class="flex flex-col items-center justify-center gap-3" data-aos="fade-left" data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+            <div><img src="./assets/dove.png" alt="Teamwork" loading="lazy"></div>
+            <div class="text-3xl font-semibold text-white">253</div>
+            <div class="text-sm text-white">Volunteeres</div>
+          </div>
 
-                </div>
-                <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-                     aria-hidden="true">
-                    <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#000] to-[#FFFFFF] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-                         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-                    </div>
-                </div>
-
-            </div>
         </div>
+        <div
+          class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          aria-hidden="true">
+          <div
+            class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#000] to-[#FFFFFF] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+          </div>
+        </div>
+
+      </div>
+    </div>
 
         <!-- Contact section  -->
         <div id="contact" class="bg-gradient-to-t from-normal to-[#ffffff]">
